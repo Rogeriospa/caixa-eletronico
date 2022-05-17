@@ -1,0 +1,76 @@
+package strategy;
+
+import java.util.Scanner;
+
+public class VerificarMenu implements Verificar{
+	
+	Scanner scan = new Scanner(System.in);
+	
+	int opc;
+	float saldo;
+	float deposito = 10000f;
+	float retirada;
+	
+	public float getDeposito() {
+		return deposito;
+	}
+	
+	public float getRetirada() {
+		return retirada;
+	}
+	
+	public float getSaldo() {
+		return saldo;
+	}
+	
+	@Override
+	public void verificar() {
+		System.out.println();
+		System.out.println("Selecione a opção: " + "1 Saldo " + "|" + " 2 Extrato " + "|" + " 3 Retirada ");
+		int opc = Integer.parseInt(scan.nextLine());
+		System.out.println();
+		
+		if (opc == 1) {
+		System.out.println("-------------------Saldo da Conta-----------------------");
+	    System.out.println();
+		System.out.println("Seu saldo é_______________________________R$ " + (saldo = (getDeposito() - getRetirada())));
+		
+		}else if (opc == 2){
+		System.out.println("---------------------Extrato da Conta-------------------");
+		System.out.println();
+		System.out.println("Seu saldo é_______________________________R$ " + (saldo = (getDeposito() - getRetirada())));
+		System.out.println();
+		System.out.println("________________Histórico de Movimentação________________");
+		System.out.println();
+		System.out.println("Depósito na Conta_________________________R$ " + deposito);
+		System.out.println("07/05/2022 às 15:00h");
+		System.out.println("Retirada da conta_________________________RS " + retirada);
+		System.out.println("14/05/2022 às 21:33h");
+		System.out.println("Total em conta____________________________R$ " + deposito);
+		System.out.println();
+		System.out.println("        Obrigado por usar o auto atendimento!!!!!");
+		System.out.println();
+		System.out.println("                   Volte Sempre!!!!!");
+		
+	    }else if(opc == 3) {
+		System.out.println("Digite o valor R$ ");
+		float retirada = Float.parseFloat(scan.nextLine());
+		System.out.println("O valor digitado foi R$ " + retirada);
+	    if(retirada <= deposito) {
+		System.out.println();
+		System.out.println("Aguarde a contagem das cédulas!!!!");
+		System.out.println();
+		System.out.println("Favor, retire as cédulas!!!!");
+		System.out.println();
+		System.out.println("Saldo restante em conta é__________________R$ " + (saldo = (deposito - retirada)));
+		System.out.println();
+	    }else{
+		System.out.println("Saldo insuficiente!!!!!!");
+		System.out.println();
+		System.out.println("Seu saldo atual é__________________________R$ " + (saldo = (getDeposito() - getRetirada())));
+			
+	    }
+	    scan.close();
+	    }
+	}
+}
