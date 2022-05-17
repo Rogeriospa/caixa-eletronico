@@ -1,0 +1,14 @@
+package strategy;
+
+public class SystemaBancario {
+
+	private Verificar verificar;
+	
+	public void setVerificar(Verificar verificar) {
+		this.verificar = verificar;
+	}
+		
+		public void verificar() {
+			verificar.verificar();
+	}
+}
