@@ -1,0 +1,13 @@
+package strategy;
+
+public class VerificarCartao implements Verificar{
+	
+	@Override
+	public void verificar() {
+		System.out.println("     Obrigado por utilizar o caixa eletrônico!      ");
+		System.out.println();
+		System.out.println("Inserindo cartão na máquina..........................");
+		System.out.println(".....................................................");
+		System.out.println("Cartão Inserido!!!!");
+	}
+}
