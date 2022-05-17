@@ -1,0 +1,13 @@
+package strategy;
+
+public class VerificarSenha implements Verificar{
+	
+	@Override
+	public void verificar() {
+		
+		System.out.println();
+		System.out.println("Por favor, insira o dedo indicador na leitora!!!!!!!");
+        System.out.println("Fazendo leitura da digital...........................");
+        System.out.println("Leitura concluída!!!!!");
+	}
+}
