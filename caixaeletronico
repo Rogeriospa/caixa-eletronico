@@ -1,0 +1,29 @@
+package strategy;
+
+public class CaixaEletronico {
+
+	public static void main(String[] args) {
+ 
+		VerificarCartao cartao = new VerificarCartao();
+		
+        SystemaBancario banco = new SystemaBancario();
+		
+		banco.setVerificar(cartao);
+		banco.verificar();
+	
+		VerificarDados dados = new  VerificarDados();
+		
+		banco.setVerificar(dados);
+		banco.verificar();
+  
+		
+		VerificarSenha senha = new VerificarSenha();
+		
+		banco.setVerificar(senha);
+		banco.verificar();
+	
+		VerificarMenu menu = new VerificarMenu();
+		banco.setVerificar(menu);
+		banco.verificar();
+	}
+}	
