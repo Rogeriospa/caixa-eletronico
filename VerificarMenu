@@ -8,7 +8,7 @@ public class VerificarMenu implements Verificar{
 	
 	int opc;
 	float saldo;
-	float deposito = 10000f;
+	float deposito;
 	float retirada;
 	
 	public float getDeposito() {
@@ -25,36 +25,58 @@ public class VerificarMenu implements Verificar{
 	
 	@Override
 	public void verificar() {
-		System.out.println();
-		System.out.println("Selecione a opção: " + "1 Saldo " + "|" + " 2 Extrato " + "|" + " 3 Retirada ");
+		
+		for(int i = 1; i <= 4; i++) {
+		System.out.println("Selecione a opção: " + " 1 Depósito " + "|" + " 2 Saldo " + "|" + " 3 Extrato " + " 4 Retirada ");
 		int opc = Integer.parseInt(scan.nextLine());
 		System.out.println();
 		
-		if (opc == 1) {
+		if(opc == 1) {
+		System.out.println("Digite o valor para depósito R$ ");
+		deposito = Float.parseFloat(scan.nextLine());
+		System.out.println("Valor digitado foi R$ " + deposito);
+		System.out.println();
+	    
+		}else if (opc == 2) {
+		System.out.println("Por favor, insira o dedo indicador na leitora!!!!!!!");
+	    System.out.println("Fazendo leitura da digital...........................");
+	    System.out.println("Leitura concluída!!!!!");	
+	    System.out.println();
 		System.out.println("-------------------Saldo da Conta-----------------------");
 	    System.out.println();
-		System.out.println("Seu saldo é_______________________________R$ " + (saldo = (getDeposito() - getRetirada())));
+		System.out.println("Seu saldo é__________________________________________R$ " + (saldo  = (deposito - retirada)));
+		System.out.println();
 		
-		}else if (opc == 2){
+		}else if (opc == 3){
+		System.out.println("Por favor, insira o dedo indicador na leitora!!!!!!!");
+		System.out.println("Fazendo leitura da digital...........................");
+        System.out.println("Leitura concluída!!!!!");	
+	    System.out.println();
 		System.out.println("---------------------Extrato da Conta-------------------");
 		System.out.println();
-		System.out.println("Seu saldo é_______________________________R$ " + (saldo = (getDeposito() - getRetirada())));
+		System.out.println("Seu saldo é_______________________________R$ " + (saldo = (deposito - retirada)));
 		System.out.println();
 		System.out.println("________________Histórico de Movimentação________________");
 		System.out.println();
-		System.out.println("Depósito na Conta_________________________R$ " + deposito);
+		System.out.println("Depósito na Conta____________________________________R$ " + deposito);
 		System.out.println("07/05/2022 às 15:00h");
-		System.out.println("Retirada da conta_________________________RS " + retirada);
+		System.out.println("Retirada da conta____________________________________RS " + retirada);
 		System.out.println("14/05/2022 às 21:33h");
-		System.out.println("Total em conta____________________________R$ " + deposito);
+		System.out.println("Total em conta_______________________________________R$ " + saldo);
 		System.out.println();
 		System.out.println("        Obrigado por usar o auto atendimento!!!!!");
 		System.out.println();
 		System.out.println("                   Volte Sempre!!!!!");
+		System.out.println();
 		
-	    }else if(opc == 3) {
+	    }else if(opc == 4) {
+		System.out.println("Por favor, insira o dedo indicador na leitora!!!!!!!");
+	    System.out.println("Fazendo leitura da digital...........................");
+	    System.out.println("Leitura concluída!!!!!");	
+	    System.out.println();
 		System.out.println("Digite o valor R$ ");
-		float retirada = Float.parseFloat(scan.nextLine());
+		retirada = Float.parseFloat(scan.nextLine());
+		
 		System.out.println("O valor digitado foi R$ " + retirada);
 	    if(retirada <= deposito) {
 		System.out.println();
@@ -62,15 +84,19 @@ public class VerificarMenu implements Verificar{
 		System.out.println();
 		System.out.println("Favor, retire as cédulas!!!!");
 		System.out.println();
-		System.out.println("Saldo restante em conta é__________________R$ " + (saldo = (deposito - retirada)));
+		System.out.println("Saldo restante em conta é__________________R$ " + (saldo = deposito - retirada ));//(saldo = (getDeposito() - getRetirada())));
 		System.out.println();
+	    
 	    }else{
+	    System.out.println();
 		System.out.println("Saldo insuficiente!!!!!!");
 		System.out.println();
-		System.out.println("Seu saldo atual é__________________________R$ " + (saldo = (getDeposito() - getRetirada())));
-			
+		System.out.println("Seu saldo atual é__________________________R$ " + (saldo = (deposito - retirada)));
+		System.out.println();
 	    }
-	    scan.close();
 	    }
+	    }
+	    System.out.println();
+	    System.out.println("Número de tentativas acabaram!!!!");
 	}
 }
