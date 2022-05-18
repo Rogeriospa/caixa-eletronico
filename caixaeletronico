@@ -15,15 +15,14 @@ public class CaixaEletronico {
 		
 		banco.setVerificar(dados);
 		banco.verificar();
-  
 		
-		VerificarSenha senha = new VerificarSenha();
+		VerificarSenha biometria = new VerificarSenha();
 		
-		banco.setVerificar(senha);
+		banco.setVerificar(biometria);
 		banco.verificar();
 	
 		VerificarMenu menu = new VerificarMenu();
 		banco.setVerificar(menu);
 		banco.verificar();
 	}
-}	
+}
